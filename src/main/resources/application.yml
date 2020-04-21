@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/devlog?allowMultiQueries=true
+    username: dev
+    password: 1234test!
+    driverClassName: com.mysql.jdbc.Driver
+    hikari:
+      poolName: HikariConnectionPool
+      minimumIdle: 20
+      maximumPoolSize: 30
+      idleTimeout: 15000
+      maxLifetime: 300000
+      validationTimeout: 10000
+      connectionTestQuery: SELECT 1
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB102Dialect
+    main:
+      allow-bean-definition-overriding: true
+
+jwt:
+  secret: SecretKey
+  expiration-time: 864000000
+  token-prefix: Bearer
+  header-string: Authorization
+
+
